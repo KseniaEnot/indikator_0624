@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameModelStaticData
   m_EditorClassIdentifier: 
   <GameModelName>k__BackingField: 0
+  <PositionMainBuilding>k__BackingField: {x: -2, y: 0, z: 0}
   <TimeStartWaves>k__BackingField: 1
   <TimeBetweenWaves>k__BackingField: 5
   <WaveWithBoss>k__BackingField: 3

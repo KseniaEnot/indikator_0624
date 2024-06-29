@@ -1,6 +1,10 @@
 ﻿using System.Collections.Generic;
 using Entities;
 using Entities.Building;
+using Infrastructure.StaticDataServiceNamespace.StaticData.LevelStaticData;
+using ProjectContext.StaticDataServiceNamespace;
+using ProjectContext.StaticDataServiceNamespace.StaticData.EntityStaticData;
+using ProjectContext.StaticDataServiceNamespace.StaticData.LevelStaticData;
 using UnityEngine;
 using Zenject;
 
@@ -10,15 +14,28 @@ namespace SceneContext
     {
         private IInstantiator _instantiator;
         private Placement _placement;
+        private StaticDataService _staticDataService;
+
+        public MainBuilding MainBuilding { get; private set; }
 
         public Dictionary<string, Transform> Buildings { get; }
 
-        private BuildingsSpawner(IInstantiator instantiator, Placement placement)
+        private BuildingsSpawner(StaticDataService staticDataService, IInstantiator instantiator, Placement placement)
         {
+            _staticDataService = staticDataService;
             _instantiator = instantiator;
             _placement = placement;
 
             Buildings = new Dictionary<string, Transform>();
+        }
+
+        public void CreateMainBuilding(GameModelName gameModelTest)
+        {
+            GameModelStaticData gameModelStaticData = _staticDataService.GetGameModelStaticData(gameModelTest);
+            EntityStaticData mainBuildingStaticData = _staticDataService.GetEntityStaticData(EntityType.MainBuilding);
+            MainBuilding = _instantiator.InstantiatePrefab(mainBuildingStaticData.Prefab,
+                    gameModelStaticData.PositionMainBuilding, Quaternion.identity)
+                .GetComponent<MainBuilding>();
         }
 
         public Building CreateBuild(GameObject buildingPrefab)

@@ -8,6 +8,7 @@ namespace Infrastructure.StaticDataServiceNamespace.StaticData.LevelStaticData
     public class GameModelStaticData : ScriptableObject
     {
         [field: SerializeField] public GameModelName GameModelName { get; private set; }
+        [field: SerializeField] public Vector3 PositionMainBuilding { get; private set; }
 
         [field: SerializeField, Header("Wave")] public double TimeStartWaves { private set; get; }
         [field: SerializeField] public double TimeBetweenWaves { get; private set; }

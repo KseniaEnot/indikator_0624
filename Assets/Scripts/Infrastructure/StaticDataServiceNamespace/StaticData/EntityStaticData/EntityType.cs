@@ -4,6 +4,7 @@
     {
         Building,
         Enemy,
-        Boss
+        Boss,
+        MainBuilding
     }
 }
