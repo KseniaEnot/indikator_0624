@@ -15,7 +15,7 @@ namespace Entities.Building
     {
         [SerializeField] private GameObject _model;
         
-        [SerializeField, Space] private Health _health;
+        [SerializeField, Space] private MainBuildingHealth _health;
         [SerializeField] private float _timeReactivated;
 
         private WaveController _waveController;
@@ -25,19 +25,21 @@ namespace Entities.Building
 
         private GameModelStaticData _gameModelStaticData;
         private float _lastWaveStartTime;
-
+        private Counter _counter;
 
         [Inject]
         public void Construct(StaticDataService staticDataService,
             TimeController timeController,
             WaveController waveController,
-            EnemiesSpawner enemiesSpawner)
+            EnemiesSpawner enemiesSpawner, 
+            Counter counter)
         {
             _timeController = timeController;
             _waveController = waveController;
             _staticDataService = staticDataService;
             _enemiesSpawner = enemiesSpawner;
-            
+            _counter = counter;
+
             _gameModelStaticData = _staticDataService.GetGameModelStaticData(GameModelName.GameModelTest);
         }
 
@@ -62,7 +64,6 @@ namespace Entities.Building
             _lastWaveStartTime = _timeController.CurrentTime;
             await UniTask.WaitUntil(() => _timeController.CurrentTime - _lastWaveStartTime >= _timeReactivated);
 
-            _health.Regeneration();
             _model.SetActive(true);
         }
     }
