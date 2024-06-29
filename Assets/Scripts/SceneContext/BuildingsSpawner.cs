@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Entities;
 using Entities.Building;
 using Infrastructure.StaticDataServiceNamespace.StaticData.LevelStaticData;
@@ -12,6 +13,8 @@ namespace SceneContext
 {
     public class BuildingsSpawner
     {
+        public event Action OnChangingBuildingsPositions;
+        
         private IInstantiator _instantiator;
         private Placement _placement;
         private StaticDataService _staticDataService;
@@ -36,6 +39,7 @@ namespace SceneContext
             MainBuilding = _instantiator.InstantiatePrefab(mainBuildingStaticData.Prefab,
                     gameModelStaticData.PositionMainBuilding, Quaternion.identity)
                 .GetComponent<MainBuilding>();
+            Buildings.Add("main", MainBuilding.transform);
         }
 
         public Building CreateBuild(GameObject buildingPrefab)
@@ -56,10 +60,16 @@ namespace SceneContext
             return false;
         }
 
-        public void BuildingWasDestroyed(string id) => 
+        public void BuildingWasDestroyed(string id)
+        {
             Buildings.Remove(id);
+            OnChangingBuildingsPositions?.Invoke();
+        }
 
-        public void BuildingWasCreated(string id, Transform building) => 
+        public void BuildingWasCreated(string id, Transform building)
+        {
             Buildings.Add(id, building);
+            OnChangingBuildingsPositions?.Invoke();
+        }
     }
 }

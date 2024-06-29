@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 761437586624681107}
   - component: {fileID: 6131827867795301540}
   - component: {fileID: 4075434530721398802}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8754387960629011769}
   - component: {fileID: 8954139541073223585}
   - component: {fileID: 2392381609332645143}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MainBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3312832474250906664}
   - component: {fileID: 5031843588226408290}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ModelDoNotPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}

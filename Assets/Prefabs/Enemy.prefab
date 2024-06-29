@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5435865860640056446}
   - component: {fileID: 6897079409227014454}
-  - component: {fileID: 2671303401360249926}
+  - component: {fileID: 8493208693922081363}
   - component: {fileID: 7278175828371186384}
+  - component: {fileID: 2671303401360249926}
+  - component: {fileID: 6878599662804481475}
   - component: {fileID: 4565567658033395313}
   - component: {fileID: 321479787988031355}
   - component: {fileID: 269365589364156566}
@@ -32,14 +34,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6797322427447826168}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.44169855, w: 0.8971636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7508957026623086584}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -52.425}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6897079409227014454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField:
     <PointsForDestruction>k__BackingField: 2
---- !u!114 &2671303401360249926
+--- !u!114 &8493208693922081363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +65,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6797322427447826168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b63eea4b534ec18b9934625358416c, type: 3}
+  m_Script: {fileID: 11500000, guid: edf2b0f6c59148d2a1dc1aa748c044ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Agent>k__BackingField: {fileID: 321479787988031355}
+  _enemyMove: {fileID: 2671303401360249926}
+  _enemyAttack: {fileID: 6878599662804481475}
 --- !u!114 &7278175828371186384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,8 +83,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entity: {fileID: 6897079409227014454}
-  _value: 2
-  _maxValue: 2
+  _value: 5
+  _maxValue: 5
+--- !u!114 &2671303401360249926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797322427447826168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b63eea4b534ec18b9934625358416c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Agent>k__BackingField: {fileID: 321479787988031355}
+--- !u!114 &6878599662804481475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797322427447826168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9e13af244a4e599d445158b395ec0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4565567658033395313
 MonoBehaviour:
   m_ObjectHideFlags: 0
