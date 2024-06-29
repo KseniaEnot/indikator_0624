@@ -23,8 +23,8 @@ namespace Entities.Buildings.Components
 
         private void Update()
         {
-            if(_currentTarget)
-                transform.rotation = Quaternion.LookRotation(Vector3.forward, _currentTarget.position - transform.position);
+            /*if(_currentTarget)
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, _currentTarget.position - transform.position);*/
         }
 
         private IEnumerator Shot()
