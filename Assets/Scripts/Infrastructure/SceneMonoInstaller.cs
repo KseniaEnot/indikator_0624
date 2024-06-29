@@ -3,6 +3,7 @@ using System.Globalization;
 using Entities;
 using Entities.Building;
 using Infrastructure.DataServiceNamespace;
+using NavMeshPlus.Components;
 using ProjectContext;
 using ProjectContext.StaticDataServiceNamespace;
 using ProjectContext.WindowsManager;
@@ -14,13 +15,14 @@ namespace Infrastructure
 {
     public class SceneMonoInstaller : MonoInstaller
     {
-        [SerializeField] private BuildingCreationArea _buildingCreationArea;
         
+        [SerializeField] private NavMeshSurface _surface;
+
         public override void InstallBindings()
         {
             Container
-                .Bind<BuildingCreationArea>()
-                .FromInstance(_buildingCreationArea)
+                .Bind<NavMeshSurface>()
+                .FromInstance(_surface)
                 .AsSingle();
             
             Container

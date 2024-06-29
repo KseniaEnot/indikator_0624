@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5668470762595683767}
   - component: {fileID: 8468260055812018363}
   - component: {fileID: 7937068094142932259}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,10 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d80cd381584c18b266aa4c315c9c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Building>k__BackingField: {fileID: 7954761559728033886}
   <IsPlace>k__BackingField: 0
-  <SelectedCell>k__BackingField: {fileID: 0}
-  _placementCell: {fileID: 0}
+  _modelDoNotPlace: {fileID: 0}
 --- !u!114 &5668470762595683767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3220241883448126912}
   - component: {fileID: 5869524806277455249}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4832879718595977601}
   - component: {fileID: 3545833090324002996}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3624114957018319019}
   - component: {fileID: 7542265188903919486}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: ModelDoNotPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}

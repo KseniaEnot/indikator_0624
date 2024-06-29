@@ -1,68 +1,64 @@
 using System;
+using NavMeshPlus.Components;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 namespace Entities.Building.Components
 {
     [RequireComponent(typeof(Building))]
     public class MoveBuilding : MonoBehaviour
     {
-        public event Action<MoveBuilding> OnPlaced;
-
-        [field: SerializeField] public Building Building { get; private set; }
+        public event Action OnPlace;
         [field: SerializeField] public bool IsPlace { get; private set; }
-        [field: SerializeField] public Cell SelectedCell { get; private set; }
+        [SerializeField] private GameObject _modelDoNotPlace;
 
-        [field: SerializeField] private Cell _placementCell;
+        private NavMeshSurface _surface;
+        
+        private bool _doNotPlace;
 
-        private void Awake()
-        {
-            Building = GetComponent<Building>();
-        }
+        [Inject] 
+        private void Construct(NavMeshSurface surface) =>
+            _surface = surface;
 
-        private void Update()
+        void Update()
         {
             if(IsPlace)
                 return;
             
             transform.position = Helper.WorldMousePosition();
+
+            if (!_doNotPlace && (Input.GetKeyDown(KeyCode.Space))) 
+                Placement();
         }
 
-        private void OnCollisionEnter2D(Collision2D col)
+        private void OnTriggerEnter2D(Collider2D col)
         {
-            SelectedCell = col.gameObject.GetComponent<Cell>();
+            if(IsPlace)
+                return;
+            
+            _doNotPlace = true;
+            _modelDoNotPlace.SetActive(true);
         }
 
-        private void OnCollisionExit2D(Collision2D other)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            Cell selectedCell = other.gameObject.GetComponent<Cell>();
-            if(selectedCell == SelectedCell)
-                SelectedCell = null;
+            if(IsPlace)
+                return;
+            
+            _doNotPlace = false;
+            _modelDoNotPlace.SetActive(false);
         }
-
-        public void IsMoving() => 
-            IsPlace = false;
 
         public bool Placement()
         {
-            if(SelectedCell && _placementCell != SelectedCell)
-            {
-                if(_placementCell)
-                    _placementCell.RemoveBuilding(Building);
-                SelectedCell.PlaceBuilding(this);
-                if(SelectedCell) 
-                    _placementCell = SelectedCell;
-            }
-            transform.position = _placementCell.transform.position;
+            if(_doNotPlace)
+                return false;
+            
             IsPlace = true;
-            OnPlaced?.Invoke(this);
-
+            OnPlace?.Invoke();
+            _surface.BuildNavMesh();
             return true;
-        }
-        public void Placement(Cell cell)
-        {
-            SelectedCell = cell;
-            Placement();
         }
     }
 }

@@ -1,8 +1,11 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Entities;
+using Entities.Building;
 using Infrastructure.DataServiceNamespace;
 using ProjectContext;
+using ProjectContext.StaticDataServiceNamespace;
+using ProjectContext.StaticDataServiceNamespace.StaticData.EntityStaticData;
 using ProjectContext.WindowsManager;
 using SceneContext;
 using TMPro;
@@ -21,25 +24,33 @@ namespace UI.Hud
 
         [SerializeField, Space] private Button _openMenu;
         [SerializeField] private Button _addBuilding;
-
+        
+        private StaticDataService _staticDataService;
+        private BuildingsSpawner _buildingsSpawner;
         private DataService _dataService;
         private GameWindowsManager _gameWindowsManager;
         private WaveController _waveController;
         private Counter _counter;
-        private BuildingCreationArea _buildingCreationArea;
+        
+        private EntityStaticData _buildingStaticData;
 
         [Inject]
-        private void Construct(DataService dataService,
+        private void Construct(
+            StaticDataService staticDataService,
+            BuildingsSpawner buildingsSpawner,
+            DataService dataService,
             GameWindowsManager gameWindowsManager,
             WaveController waveController,
-            Counter counter,
-            BuildingCreationArea buildingCreationArea)
+            Counter counter)
         {
+            _staticDataService = staticDataService;
+            _buildingsSpawner = buildingsSpawner;
             _dataService = dataService;
             _gameWindowsManager = gameWindowsManager;
             _waveController = waveController;
             _counter = counter;
-            _buildingCreationArea = buildingCreationArea;
+
+            _buildingStaticData = _staticDataService.GetEntityStaticData(EntityType.Building);
 
             _counter.OnScoreChanged += ScoreChanged;
             _waveController.OnWaveStart += WaveStart;
@@ -49,12 +60,12 @@ namespace UI.Hud
         private void Awake()
         {
             _openMenu.onClick.AddListener(() => _gameWindowsManager.Open(EWindow.Menu));
-            _addBuilding.onClick.AddListener(() => AddBuilding().Forget());
+            _addBuilding.onClick.AddListener(() => AddBuildingAsync().Forget());
         }
 
-        private async UniTask AddBuilding()
+        private async UniTask AddBuildingAsync()
         {
-            if (!_buildingCreationArea.AddBuilding())
+            if (!AddBuilding())
             {
                 _addBuilding.image.color = Color.red;
                 
@@ -62,6 +73,17 @@ namespace UI.Hud
                 
                 _addBuilding.image.color = Color.white;
             }
+        }
+
+        private bool AddBuilding()
+        {
+            if (_counter.Score - _dataService.BuildingCost >= 0 
+                && _buildingsSpawner.CreateBuildToPlacement(_buildingStaticData.Prefab))
+            {
+                _counter.AddPoints(-_dataService.BuildingCost);
+                return true;
+            }
+            return false;
         }
 
         private void OnDestroy() => 
