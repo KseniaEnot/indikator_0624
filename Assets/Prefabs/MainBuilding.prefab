@@ -186,7 +186,7 @@ MonoBehaviour:
   _model: {fileID: 1163069168808613709}
   _health: {fileID: 0}
   _timeReactivated: 0
-  _defoltScore: 8
+  _defoltScore: 9
 --- !u!114 &7520390552414919918
 MonoBehaviour:
   m_ObjectHideFlags: 0
