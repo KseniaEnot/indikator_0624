@@ -10,7 +10,8 @@ namespace Entities.Enemies
         [SerializeField] private float _radius;
         [SerializeField] private float _timeAttack;
         [SerializeField] private float _damage;
-        
+        [SerializeField] Animator animator;
+
         private Transform _target;
         private IHealth _targetHealth;
         private bool _isDestroy;
@@ -29,6 +30,7 @@ namespace Entities.Enemies
 
         private async UniTask Attack()
         {
+            animator.SetBool("IsDamage", true);
             while (_target)
             {
                 await UniTask.Delay(TimeSpan.FromSeconds(_timeAttack));
@@ -36,6 +38,7 @@ namespace Entities.Enemies
                 if (!_isDestroy && (transform.position - _target.position).magnitude < _radius) 
                     _targetHealth.DoDamage(_damage);
             }
+            animator.SetBool("IsDamage", false);
         }
     }
 }
