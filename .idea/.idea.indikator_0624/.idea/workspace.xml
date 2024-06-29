@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09272c4a-454f-4cf5-8871-6a1b0ebc28dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.indikator_0624/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.indikator_0624/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainBuilding.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainBuilding.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Building/MainBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Building/MainBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneContext/Counter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneContext/Counter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneContext/WaveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneContext/WaveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/MoveAlongTrajectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/MoveAlongTrajectory.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@fbe0bf8515/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/97436df440ca462884c5332c1d8ebbe7941e00/a7/220f36cd/SerializedProperty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Project/GameJam_25_05.2024/Assets/Plugins/Zenject/Source/Main/DiContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Project/GameJam_25_05.2024/Assets/Scripts/Entities/Buildings/Components/BuildingPlacement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -74,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719657787204</updated>
       <workItem from="1719657794836" duration="2244000" />
-      <workItem from="1719660151491" duration="16220000" />
+      <workItem from="1719660151491" duration="16595000" />
     </task>
     <servers />
   </component>
@@ -97,5 +94,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Entities/Building/MainBuilding.cs</url>
+          <line>59</line>
+          <properties documentPath="D:\Unity\GameJam_25_05.2024\indikator_0624\Assets\Scripts\Entities\Building\MainBuilding.cs" initialLine="59" containingFunctionPresentation="method 'DestroyEntity'">
+            <startOffsets>
+              <option value="2067" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2097" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
