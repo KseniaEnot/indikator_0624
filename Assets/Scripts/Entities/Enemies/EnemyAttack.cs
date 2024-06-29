@@ -38,7 +38,9 @@ namespace Entities.Enemies
                 if (!_isDestroy && (transform.position - _target.position).magnitude < _radius) 
                     _targetHealth.DoDamage(_damage);
             }
-            animator.SetBool("IsDamage", false);
+            
+            if (!_isDestroy) 
+                animator.SetBool("IsDamage", false);
         }
     }
 }

@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entity: {fileID: 6897079409227014454}
-  _value: 3
-  _maxValue: 3
+  _value: 4
+  _maxValue: 4
 --- !u!114 &2671303401360249926
 MonoBehaviour:
   m_ObjectHideFlags: 0

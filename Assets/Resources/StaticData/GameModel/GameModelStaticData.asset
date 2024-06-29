@@ -16,7 +16,7 @@ MonoBehaviour:
   <PositionMainBuilding>k__BackingField: {x: -5.5, y: 0, z: 0}
   <TimeStartWaves>k__BackingField: 1
   <TimeBetweenWaves>k__BackingField: 5
-  <WaveWithBoss>k__BackingField: 3
+  <WaveWithBoss>k__BackingField: 1000
   <TimeBetweenSpawn>k__BackingField: 1
   <EnemiesCount>k__BackingField: 2
   <EnemiesSpawnPoint>k__BackingField: {x: 5, y: -3, z: 0}

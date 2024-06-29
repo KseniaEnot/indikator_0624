@@ -11,10 +11,12 @@ namespace Infrastructure
         private GameWindowsManager _gameWindowsManager;
         private WaveController _waveController;
         private BuildingsSpawner _buildingsSpawner;
+        private Counter _counter;
 
         [Inject]
-        private void Construct(GameWindowsManager gameWindowsManager, WaveController waveController, BuildingsSpawner buildingsSpawner)
+        private void Construct(GameWindowsManager gameWindowsManager, WaveController waveController, BuildingsSpawner buildingsSpawner, Counter counter)
         {
+            _counter = counter;
             _gameWindowsManager = gameWindowsManager;
             _waveController = waveController;
             _buildingsSpawner = buildingsSpawner;
@@ -29,6 +31,8 @@ namespace Infrastructure
             _gameWindowsManager.Awake();
             _gameWindowsManager.OpenHud();
             _gameWindowsManager.Open(EWindow.Menu);
+            
+            _counter.AddPoints(3);
         }
     }
 }
