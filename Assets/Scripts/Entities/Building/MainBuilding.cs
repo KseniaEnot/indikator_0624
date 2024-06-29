@@ -5,6 +5,7 @@ using Infrastructure.StaticDataServiceNamespace.StaticData.LevelStaticData;
 using ProjectContext;
 using ProjectContext.StaticDataServiceNamespace;
 using ProjectContext.StaticDataServiceNamespace.StaticData.LevelStaticData;
+using ProjectContext.WindowsManager;
 using SceneContext;
 using UnityEngine;
 using Zenject;
@@ -17,6 +18,7 @@ namespace Entities.Building
         
         [SerializeField, Space] private MainBuildingHealth _health;
         [SerializeField] private float _timeReactivated;
+        [SerializeField] private int _defoltScore = 7;
 
         private WaveController _waveController;
         private StaticDataService _staticDataService;
@@ -26,14 +28,17 @@ namespace Entities.Building
         private GameModelStaticData _gameModelStaticData;
         private float _lastWaveStartTime;
         private Counter _counter;
+        private GameWindowsManager _gameWindowsManager;
 
         [Inject]
         public void Construct(StaticDataService staticDataService,
             TimeController timeController,
             WaveController waveController,
             EnemiesSpawner enemiesSpawner, 
-            Counter counter)
+            Counter counter,
+            GameWindowsManager gameWindowsManager)
         {
+            _gameWindowsManager = gameWindowsManager;
             _timeController = timeController;
             _waveController = waveController;
             _staticDataService = staticDataService;
@@ -51,11 +56,9 @@ namespace Entities.Building
             _model.SetActive(false);
             
             _enemiesSpawner.ClearAllEnemies();
-            int _wavesFromSave = _waveController.WavesCount % _gameModelStaticData.WaveWithBoss;
-            if(_wavesFromSave > 0)
-                _waveController.DropOn(_wavesFromSave);
-            else
-                _waveController.DropOn(_gameModelStaticData.WaveWithBoss);
+            _waveController.DropOn();
+            _counter.DropOn(_defoltScore);
+            _gameWindowsManager.Open(EWindow.Menu);
             Active().Forget();
         }
 

@@ -13,6 +13,12 @@ namespace SceneContext
             enemiesSpawner.OnEnemyWasDestroyed += EnemyWasDestroyed;
         }
 
+        public void DropOn(int score)
+        {
+            Score = score;
+            OnScoreChanged?.Invoke(Score);
+        }
+
         public void AddPoints(int point)
         {
             Score += point;
