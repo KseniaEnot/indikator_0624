@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09272c4a-454f-4cf5-8871-6a1b0ebc28dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/Agr.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/Agr.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyAttack.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyAttack.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemySetNearestTarget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemySetNearestTarget.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.indikator_0624/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.indikator_0624/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Building.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Building.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainBuilding.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainBuilding.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneContext/BuildingsSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneContext/BuildingsSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/EnemyAttack.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +21,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@fbe0bf8515/Runtime/UniTaskScheduler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Project/GameJam_25_05.2024/Assets/Plugins/Zenject/Source/Main/DiContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Project/GameJam_25_05.2024/Assets/Scripts/Entities/Buildings/Components/BuildingPlacement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -82,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719657787204</updated>
       <workItem from="1719657794836" duration="2244000" />
-      <workItem from="1719660151491" duration="11538000" />
+      <workItem from="1719660151491" duration="13217000" />
     </task>
     <servers />
   </component>
