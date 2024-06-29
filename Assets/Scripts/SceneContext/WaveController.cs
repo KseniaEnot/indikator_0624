@@ -23,8 +23,6 @@ namespace SceneContext
         {
             _staticDataService = staticDataService;
             _timeController = timeController;
-
-            Awake();
         }
 
         public void Awake()

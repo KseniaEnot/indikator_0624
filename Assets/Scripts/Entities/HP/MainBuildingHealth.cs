@@ -20,8 +20,9 @@ namespace Entities.HP
 
         public void DoDamage(float damage)
         {
-            _counter.AddPoints(-(int) damage);
-            if(_counter.Score <= 0)
+            if(_counter.Score - damage >= 0)
+                _counter.AddPoints(-(int) damage);
+            else
                 _entity.DestroyEntity();
         }
 

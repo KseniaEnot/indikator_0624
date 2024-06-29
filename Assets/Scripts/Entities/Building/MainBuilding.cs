@@ -57,8 +57,8 @@ namespace Entities.Building
             
             _enemiesSpawner.ClearAllEnemies();
             _waveController.DropOn();
-            _counter.DropOn(_defoltScore);
             _gameWindowsManager.Open(EWindow.Menu);
+            // _counter.DropOn(_defoltScore);
             Active().Forget();
         }
 
@@ -67,6 +67,7 @@ namespace Entities.Building
             _lastWaveStartTime = _timeController.CurrentTime;
             await UniTask.WaitUntil(() => _timeController.CurrentTime - _lastWaveStartTime >= _timeReactivated);
 
+            _counter.DropOn(_defoltScore);
             _model.SetActive(true);
         }
     }

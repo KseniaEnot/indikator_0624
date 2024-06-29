@@ -43,7 +43,7 @@ namespace SceneContext
         public void ClearAllEnemies()
         {
             foreach (KeyValuePair<string,Enemy> enemy in Enemies) 
-                GameObject.Destroy(enemy.Value.gameObject);
+                enemy.Value.ForcedDestroyEntity();
             Enemies.Clear();
         }
         

@@ -23,7 +23,7 @@ namespace Entities.Enemies
             Attack().Forget();
         }
 
-        private void OnDestroy()
+        public void DestroyEnemy()
         {
             _isDestroy = true;
         }
@@ -31,7 +31,7 @@ namespace Entities.Enemies
         private async UniTask Attack()
         {
             animator.SetBool("IsDamage", true);
-            while (_target)
+            while (_target && !_isDestroy)
             {
                 await UniTask.Delay(TimeSpan.FromSeconds(_timeAttack));
                 

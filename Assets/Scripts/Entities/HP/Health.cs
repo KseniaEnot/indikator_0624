@@ -19,5 +19,11 @@ namespace Entities.HP
 
         public void Regeneration() => 
             _value = _maxValue;
+
+        public void AddToMax(float value)
+        {
+            _maxValue += value;
+            _value = _maxValue;
+        }
     }
 }

@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyData>k__BackingField:
     <PointsForDestruction>k__BackingField: 5
+  _health: {fileID: 7278175828371186384}
 --- !u!114 &7278175828371186384
 MonoBehaviour:
   m_ObjectHideFlags: 0
